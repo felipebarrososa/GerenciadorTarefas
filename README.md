@@ -84,13 +84,13 @@ GerenciadorTarefas/
 ├── Models/               # Modelos da aplicação (Tarefa.cs)
 ├── Repositories/         # Repositórios para interação com o banco de dados
 ├── Services/             # Lógica de negócios
-├── wwwroot/              # Arquivos estáticos (HTML, CSS, JS)
+├── appsettings.json      # Configurações do banco de dados
+└── Program.cs            # Inicialização da aplicação
+GerenciadorTarefasFront/  # Arquivos estáticos (HTML, CSS, JS)
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
-├── Tests/                # Testes unitários (xUnit)
-├── appsettings.json      # Configurações do banco de dados
-└── Program.cs            # Inicialização da aplicação
+GerenciadorTarefas.Tests/ # Testes unitários (xUnit)
 ```
 
 ---
