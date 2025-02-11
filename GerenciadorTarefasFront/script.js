@@ -2,15 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form-tarefa');
     const taskList = document.getElementById('task-list');
     const submitButton = document.getElementById('submit-btn');
-    let currentTaskId = null; // Variável para armazenar o ID da tarefa em edição
-    let tasks = []; // Variável global para armazenar as tarefas
+    let currentTaskId = null; 
+    let tasks = []; 
 
     // Função para obter todas as tarefas
     const fetchTasks = async () => {
         try {
             const response = await fetch('http://localhost:5063/api/tarefa');
             if (!response.ok) throw new Error('Erro ao buscar tarefas');
-            tasks = await response.json(); // Armazenando as tarefas na variável global
+            tasks = await response.json(); 
             renderTasks(tasks);
         } catch (error) {
             console.error('Erro ao carregar tarefas:', error);
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(task)
             });
             if (!response.ok) throw new Error('Erro ao adicionar tarefa');
-            fetchTasks();  // Atualiza a lista de tarefas
+            fetchTasks();  
         } catch (error) {
             console.error('Erro ao adicionar tarefa:', error);
         }
@@ -54,15 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para editar tarefa
     window.editTask = async (id) => {
-        const task = tasks.find(task => task.id === id); // Agora 'tasks' está disponível globalmente
-        currentTaskId = id; // Armazenando o ID da tarefa em edição
+        const task = tasks.find(task => task.id === id); 
+        currentTaskId = id; 
 
-        // Preenche os campos com os dados da tarefa
+        
         document.getElementById('titulo').value = task.titulo;
         document.getElementById('descricao').value = task.descricao;
         document.getElementById('status').value = task.status;
 
-        // Altera o texto do botão para "Alterar Tarefa"
+        
         submitButton.textContent = 'Alterar Tarefa';
     };
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const descricao = document.getElementById('descricao').value;
         const status = document.getElementById('status').value;
     
-        // Inclui o id no corpo da requisição conforme o Swagger sugere
+        
         const updatedTask = {
             id: currentTaskId,
             titulo,
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'DELETE'
             });
             if (!response.ok) throw new Error('Erro ao excluir tarefa');
-            fetchTasks();  // Atualiza a lista de tarefas
+            fetchTasks();  
         } catch (error) {
             console.error('Erro ao excluir tarefa:', error);
         }
