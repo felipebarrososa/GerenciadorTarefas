@@ -106,20 +106,6 @@ GerenciadorTarefas.Tests/ # Testes unitários (xUnit)
 
 ---
 
-## 🎨 Demonstração
-
-![App Demo](https://via.placeholder.com/800x400.png?text=Demo+do+Gerenciador+de+Tarefas)
-
-A interface é responsiva, com um design moderno e intuitivo, oferecendo uma experiência fluida para o usuário.
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para obter mais informações.
-
----
-
 ## ✨ Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir *issues*, enviar *pull requests* ou sugerir melhorias.
@@ -136,7 +122,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir *issues*, enviar
 
 Desenvolvido por **Felipe Barroso** 🚀
 
-📧 [Email](mailto:felipebarroso@email.com)  |  [LinkedIn](https://www.linkedin.com/in/felipebarroso)  |  [GitHub](https://github.com/seu-usuario)
+📧 [Email](mailto:fsbarroso0890@gmail.com)  |  [LinkedIn](https://www.linkedin.com/in/felipebarrososa)  |  [GitHub](https://github.com/felipebarrososa)
 
 ---
 
