@@ -2,6 +2,7 @@ using GerenciadorTarefas.Data;
 using GerenciadorTarefas.Repositories;
 using GerenciadorTarefas.Services;
 using Microsoft.EntityFrameworkCore;
+using GerenciadorTarefas.Messaging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
 
 // Registra o Service
 builder.Services.AddScoped<ITarefaService, TarefaService>();
+
+// Registra o RabbitMQPublisher
+builder.Services.AddSingleton<IRabbitMQPublisher, RabbitMQPublisher>();
 
 // Configura o Swagger
 builder.Services.AddEndpointsApiExplorer();
