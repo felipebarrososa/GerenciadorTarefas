@@ -3,7 +3,7 @@
 ![.NET Status](https://img.shields.io/badge/.NET-6-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Este é um sistema de gerenciamento de tarefas desenvolvido com .NET 6, PostgreSQL e uma interface web moderna utilizando HTML, CSS e JavaScript. O sistema permite adicionar, visualizar, editar e excluir tarefas de forma intuitiva e dinâmica, além de contar com autenticação de usuários e notificações em tempo real via WebSockets.
+Este é um sistema de gerenciamento de tarefas desenvolvido com .NET 6, PostgreSQL e uma interface web moderna utilizando HTML, CSS e JavaScript. O sistema permite adicionar, visualizar, editar e excluir tarefas de forma intuitiva e dinâmica.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -16,32 +16,26 @@ Este é um sistema de gerenciamento de tarefas desenvolvido com .NET 6, PostgreS
 - AutoMapper para mapeamento de modelos
 - FluentValidation para validação de entrada
 - MediatR para implementação de CQRS
-- SignalR para WebSockets
-- JWT para autenticação
+- Mensageria com RabbitMQ para processamento assíncrono de tarefas
 
 ### Frontend:
-- HTML5, CSS3, JavaScript (Vanilla)
+- HTML5, CSS3, JavaScript
 - Fetch API para consumo da API
-- Bootstrap para estilização
-- WebSockets (SignalR) para atualizações em tempo real
 
 ## 🚀 Funcionalidades
 
 ### 📌 Funcionalidades do Backend:
 - **CRUD de Tarefas**: Criar, ler, atualizar e excluir tarefas.
-- **Autenticação e Autorização**: Registro e login com JWT.
-- **Sistema de Notificações em Tempo Real**: Notificações de mudança de status via WebSockets (SignalR).
 - **Registro de Atividades**: Histórico de modificações nas tarefas.
+- **Mensageria**: Integração com RabbitMQ para processamento assíncrono de tarefas.
 - **Validação de Entrada**: Uso do FluentValidation para validar dados enviados.
 - **Documentação da API**: Disponível via Swagger.
 - **Testes Unitários**: Cobertura das principais funcionalidades com xUnit.
 
 ### 🖥️ Funcionalidades do Frontend:
-- **Interface Responsiva**: Utiliza Bootstrap para um layout amigável.
+- **Interface Simples e Funcional**: Desenvolvida com HTML, CSS e JavaScript puro.
 - **Consumo da API**: Requisições via Fetch API para CRUD de tarefas.
-- **Autenticação**: Login e logout utilizando JWT.
-- **WebSockets**: Atualizações em tempo real das tarefas via SignalR.
-- **Filtros de Busca**: Pesquisa por status, título e usuário responsável.
+- **Filtros de Busca**: Pesquisa por status e título.
 
 ## 📦 Instalação e Execução
 
@@ -88,37 +82,30 @@ cd GerenciadorTarefas.Tests
 dotnet test
 ```
 
-Os testes foram escritos utilizando xUnit, garantindo a integridade das operações de CRUD e autenticação.
+Os testes foram escritos utilizando xUnit, garantindo a integridade das operações de CRUD.
 
 ## 📑 Estrutura do Projeto
 
 ```
 GerenciadorTarefas/
 │
-├── Controllers/          # Lógica das APIs (TarefaController, UsuarioController)
-├── Models/               # Modelos da aplicação (Tarefa.cs, Usuario.cs)
+├── Controllers/          # Lógica das APIs (TarefaController)
+├── Models/               # Modelos da aplicação (Tarefa.cs)
 ├── Repositories/         # Repositórios para interação com o banco de dados
 ├── Services/             # Lógica de negócios
-├── SignalR/              # Implementação de WebSockets
 ├── appsettings.json      # Configurações do banco de dados
+├── Messaging/            # Implementação da mensageria (RabbitMQ)
 └── Program.cs            # Inicialização da aplicação
 
 GerenciadorTarefasFront/  # Arquivos estáticos (HTML, CSS, JS)
 │   ├── index.html
 │   ├── styles.css
 │   ├── script.js
-│   └── login.js
 
 GerenciadorTarefas.Tests/ # Testes unitários (xUnit)
 ```
 
 ## 📋 API Endpoints
-
-### Autenticação
-| Método  | Rota            | Descrição                   |
-|---------|----------------|-----------------------------|
-| POST    | /api/auth/login | Login e geração de JWT    |
-| POST    | /api/auth/register | Registro de novo usuário |
 
 ### Tarefas
 | Método  | Rota           | Descrição                       |
